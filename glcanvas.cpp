@@ -4,7 +4,7 @@
 // Author:      Julian Smart
 // Modified by:
 // Created:     04/01/98
-// RCS-ID:      $Id: glcanvas.cpp,v 1.19 2003/07/09 23:18:40 VZ Exp $
+// RCS-ID:      $Id: glcanvas.cpp,v 1.2 2003/09/12 21:35:54 mbarbon Exp $
 // Copyright:   (c) Julian Smart
 // Licence:     wxWindows licence
 /////////////////////////////////////////////////////////////////////////////
