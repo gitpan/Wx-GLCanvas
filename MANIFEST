@@ -10,3 +10,4 @@ myglcanvas.h
 samples/minimal.pl
 t/01_load.t
 typemap
+META.yml                                 Module meta-data (added by MakeMaker)
