@@ -4,17 +4,19 @@
 ## Author:      Mattia Barbon
 ## Modified by:
 ## Created:     26/07/2003
-## RCS-ID:      $Id: Makefile.PL 2061 2007-06-23 20:05:48Z mbarbon $
-## Copyright:   (c) 2003, 2005, 2007 Mattia Barbon
+## RCS-ID:      $Id: Makefile.PL 2410 2008-06-29 19:32:37Z mbarbon $
+## Copyright:   (c) 2003, 2005, 2007-2008 Mattia Barbon
 ## Licence:     This program is free software; you can redistribute it and/or
 ##              modify it under the same terms as Perl itself
 #############################################################################
 
 use strict;
-use Wx::build::MakeMaker 0.16;
+use lib 'inc';
+use MyMakeMaker;
 
 my %requires =
-  ( 'Wx'    => '0.57',
+  ( 'Wx'                   => '0.57',
+    'Wx::build::MakeMaker' => '0.16',
     );
 
 eval {
@@ -22,13 +24,14 @@ eval {
     ExtUtils::MY_Metafile->import;
 
     my_metafile
-      ( { license        => 'perl',
-          dynamic_config => 1,
-          requires       => \%requires,
-          build_requires => {},
+      ( { license            => 'perl',
+          dynamic_config     => 1,
+          requires           => \%requires,
+          build_requires     => {},
+          configure_requires => { 'Wx::build::MakeMaker' => '0.16',
+                                  },
           } );
 };
-die $@ if $@;
 
 wxWriteMakefile( NAME          => 'Wx::GLCanvas',
                  ABSTRACT_FROM => 'lib/Wx/GLCanvas.pm',
